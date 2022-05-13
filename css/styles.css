@@ -13,6 +13,7 @@
     --dark-bg-cl: #2f303a;
     --white-bg-cl: #ffffff;
     --accent-bg-cl: #2196f3;
+    --secondary-bg-color: #F5F4FA;
 }
 
 body {
@@ -47,17 +48,26 @@ ul {
     overflow: hidden;
 }
 
-
-
-
-
 .section {
     padding: 94px 0;
 }
 
+.about-section {
+    padding-top: 0;
+}
+
 .container {
+    display: block;
+    align-items: center;
+}
+
+.container .services {
+    flex-wrap: wrap;
+}
+.header .container {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .container {
     width: 1200px;
@@ -71,11 +81,10 @@ ul {
     border: 2px solid var(--accent-bg-cl);
 }
 
-.list.about,
+.list-about,
 .member-list,
-.services.flex.container {
+.container .services {
     display: flex;
-    flex-wrap: wrap;
 }
 
 
@@ -83,8 +92,6 @@ ul {
 /* секція header */
 
 .logo {
-    margin-right: 93px;
-
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 26px;
@@ -94,6 +101,13 @@ ul {
     text-decoration: none;
 
     color: var(--accent-cl);
+}
+
+.logo.studio, .logo.portfolio {
+    margin-right: 94px;
+}
+.logo.studio:last-child {
+    margin-right: 0;
 }
 
 .navigation .link {
@@ -111,23 +125,28 @@ ul {
     color: var(--main-txt-cl);
 }
 
-.list.nav {
+.list-nav {
     display: flex;
+    list-style: none;
 }
 
-.item.nav {
+.item-nav {
     margin-right: 50px;
 }
 
-.item.nav:last-child {
+.item-nav:last-child {
     margin-right: 0;
 }
 
-.auth-nav {
+.auth-nav.item, .auth-nav.list {
     display: flex;
-    margin-left: auto;
+    margin-left: 50px;
+    justify-content: center;
 }
 
+.auth-nav.list{
+    margin-left: auto;
+}
 .auth-nav .item+.item {
     margin-left: 50px;
 }
@@ -146,8 +165,11 @@ ul {
     background-color: var(--dark-bg-cl);
 }
 
-.hero-title {
-    margin-bottom: 30px;
+ .hero-title {
+    margin-bottom: 30px; 
+    width: 696px;
+    margin-right: auto;
+    margin-left: auto;
 
     font-weight: 900;
     font-size: 44px;
@@ -158,13 +180,7 @@ ul {
 
     color: var(--white-color);
 }
-}
 
-.hero-title {
-    width: 696px;
-    margin-right: auto;
-    margin-left: auto;
-}
 
 /*Header Address*/
 .header .list .mail,
@@ -178,7 +194,6 @@ ul {
 
     color: var(--secondary-txt-cl);
 }
-
 
 .header .link.active {
     color: var(--accent-cl);
@@ -236,7 +251,8 @@ ul {
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
-    padding-bottom: 20px;
+    list-style: none;
+        margin-bottom: 50px;
 }
 
 .nav-item {
@@ -276,6 +292,9 @@ button.nav-btn:focus {
     background-color: var(--accent-bg-cl);
 }
 
+.btn {
+    margin-right: 0;
+}
 /*Features*/
 .feature-title {
     font-weight: 700;
@@ -317,16 +336,24 @@ button.nav-btn:focus {
 }
 
 /*Секція About*/
-.item.img {
-    width: 370px;
-    margin-right: 30px;
-    margin-bottom: 30px;
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-.item.img:last-child {
+.item-img {
+    width: 370px;
+    margin-right: 30px;
+}
+
+.item-img:last-child {
     margin-right: 0;
 }
 
+.list-about {
+    list-style: none;
+}
 .section-title {
     font-weight: 700;
     font-size: 36px;
@@ -339,16 +366,22 @@ button.nav-btn:focus {
 }
 
 /*Секція команда*/
+.section.team {
+    background-color: var(--secondary-bg-color);
+}
 .member-item {
     width: 270px;
     margin-right: 30px;
-    margin-bottom: 30px;
 }
 
 .member-item:nth-last-child {
     margin-right: 0;
 }
 
+.member-text {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 .link,
 .member-list,
 .list,
@@ -357,6 +390,8 @@ button.nav-btn:focus {
 }
 
 .member-title {
+margin-bottom: 10px;
+
     font-weight: 500;
     font-size: 16px;
     line-height: 1.19;
@@ -375,7 +410,7 @@ button.nav-btn:focus {
     color: var(--secondary-txt-cl);
 }
 
-/*Portfolio main*/
+/*Portfolio*/
 
 .services-title {
     font-weight: 700;
@@ -388,10 +423,12 @@ button.nav-btn:focus {
     color: var(--main-txt-cl);
 }
 
-.services {
-    display: inline-block;
-} 
-
+.services-list{
+    padding: 20px 24px;
+    border-left: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+}
 .services-item {
     width: 370px;
     margin-right: 30px;
@@ -422,11 +459,11 @@ button.nav-btn:focus {
 /*Footer*/
 .footer {
     background-color: var(--dark-bg-cl);
+  
 }
-
-.container.footer {
+footer{
     padding-top: 60px;
-    padding-bottom: 60px;
+        padding-bottom: 60px;
 }
 
 .footer .mail,
@@ -450,6 +487,18 @@ button.nav-btn:focus {
     color: var(--white-color);
 }
 
-.container .logo.footer {
+
+.logo.footer {
+    display: block;
+}
+
+.list-footer {
+    list-style: none;
+}
+
+.list-footer .item{
+    margin-bottom: 9px;
+}
+.logo.footer {
     margin-bottom: 20px;
 }
